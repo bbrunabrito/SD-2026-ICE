@@ -39,6 +39,30 @@ if 'PrinterPrx' not in _M_Demo.__dict__:
         def end_printString(self, _r):
             return _M_Demo.Printer._op_printString.end(self, _r)
 
+        def toUpperCase(self, s, context=None):
+            return _M_Demo.Printer._op_toUpperCase.invoke(self, ((s, ), context))
+
+        def toUpperCaseAsync(self, s, context=None):
+            return _M_Demo.Printer._op_toUpperCase.invokeAsync(self, ((s, ), context))
+
+        def begin_toUpperCase(self, s, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Printer._op_toUpperCase.begin(self, ((s, ), _response, _ex, _sent, context))
+
+        def end_toUpperCase(self, _r):
+            return _M_Demo.Printer._op_toUpperCase.end(self, _r)
+
+        def concat(self, a, b, context=None):
+            return _M_Demo.Printer._op_concat.invoke(self, ((a, b, ), context))
+
+        def concatAsync(self, a, b, context=None):
+            return _M_Demo.Printer._op_concat.invokeAsync(self, ((a, b, ), context))
+
+        def begin_concat(self, a, b, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Demo.Printer._op_concat.begin(self, ((a, b, ), _response, _ex, _sent, context))
+
+        def end_concat(self, _r):
+            return _M_Demo.Printer._op_concat.end(self, _r)
+
         @staticmethod
         def checkedCast(proxy, facetOrContext=None, context=None):
             return _M_Demo.PrinterPrx.ice_checkedCast(proxy, '::Demo::Printer', facetOrContext, context)
@@ -71,6 +95,12 @@ if 'PrinterPrx' not in _M_Demo.__dict__:
         def printString(self, s, current=None):
             raise NotImplementedError("servant method 'printString' not implemented")
 
+        def toUpperCase(self, s, current=None):
+            raise NotImplementedError("servant method 'toUpperCase' not implemented")
+
+        def concat(self, a, b, current=None):
+            raise NotImplementedError("servant method 'concat' not implemented")
+
         def __str__(self):
             return IcePy.stringify(self, _M_Demo._t_PrinterDisp)
 
@@ -79,7 +109,9 @@ if 'PrinterPrx' not in _M_Demo.__dict__:
     _M_Demo._t_PrinterDisp = IcePy.defineClass('::Demo::Printer', Printer, (), None, ())
     Printer._ice_type = _M_Demo._t_PrinterDisp
 
-    Printer._op_printString = IcePy.Operation('printString', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), None, ())
+    Printer._op_printString = IcePy.Operation('printString', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), ((), IcePy._t_string, False, 0), ())
+    Printer._op_toUpperCase = IcePy.Operation('toUpperCase', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), ((), IcePy._t_string, False, 0), ())
+    Printer._op_concat = IcePy.Operation('concat', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0), ((), IcePy._t_string, False, 0),), (), ((), IcePy._t_string, False, 0), ())
 
     _M_Demo.Printer = Printer
     del Printer

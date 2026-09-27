@@ -9,6 +9,16 @@ class PrinterI(Demo.Printer):
         print(self.t, s)
         return s + "*"
 
+    def toUpperCase(self, s, current=None):
+        result = s.upper()
+        print(self.t, result)
+        return result
+
+    def concat(self, a, b, current=None):
+        result = a + b
+        print(self.t, result)
+        return result
+
 communicator = Ice.initialize(sys.argv) 
 
 adapter = communicator.createObjectAdapterWithEndpoints("SimpleAdapter", "default -p 5678")
